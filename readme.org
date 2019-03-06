@@ -1,0 +1,19 @@
+Collection of css/html shows mostly from codepen
+
+* use
+open index.html file in each folder
+
+If you prefer a live update experience like codepen you can install browser-sync,
+and run 
+
+#+begin_src 
+sh serve.sh bulma-io-basic-dashboard-layout 
+#+end_src
+
+if you want to see all 
+
+#+begin_src 
+sh serve.sh .
+#+end_src
+
+run genindex.sh when you want to update index file for all in this case

@@ -1,0 +1,5 @@
+.overflow-gallery {
+    -webkit-overflow-scrolling: touch;
+}
+
+.overflow-inner{height:50vw;}
