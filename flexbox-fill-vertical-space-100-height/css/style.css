@@ -26,7 +26,7 @@ body {
 .container .box-2 {
   background-color: blue;
   flex: 1;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .container .box-3 {
   background-color: red;

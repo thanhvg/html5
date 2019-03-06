@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Laila");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font: 400 1rem/1.5 "Laila", serif;
+  color: #fff;
+  cursor: none;
+}
+body #cursor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  fill: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px 2px rgba(255, 255, 255, 0.45);
+  transition: transform 100ms cubic-bezier(0.57, 0.21, 0.69, 3.25);
+}
+body:active #cursor {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#water {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  z-index: -2;
+  width: 110%;
+  height: 110%;
+}
+#water #bg {
+  filter: url("#filter");
+}
+
+#bubbles {
+  position: absolute;
+  z-index: -1;
+}
+#bubbles.none {
+  display: none;
+}
+
+.module {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr minmax(90px, auto);
+  grid-template-rows: 1fr;
+}
+.module article h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 900;
+  text-shadow: -5px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.module aside {
+  position: relative;
+  display: flex;
+  max-width: 90px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.2) 50%, transparent);
+}
+.module aside svg,
+.module aside p {
+  transform: rotate(90deg);
+}
+.module aside p {
+  white-space: nowrap;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  color: #000;
+}
+.footer h2 {
+  margin: 0;
+  margin-right: 2em;
+}
+.footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer ul a {
+  margin: auto 0.25em;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #000;
+  border: 1px dashed #000;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.25s linear;
+}
+.footer ul a:hover {
+  color: #fff;
+  border: 1px dashed #fff;
+}
