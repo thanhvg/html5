@@ -6,149 +6,96 @@
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">
-          Hello World
-        </h1>
-        <p class="subtitle">
-          My first website with <strong>Bulma</strong>!
-        </p>
-      </div>
-      <div class="columns">
-        <div class="column is-four-fifths">is-four-fifths</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          IVT HVR
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
-      <div class="columns">
-        <div class="column is-three-quarters">is-three-quarters</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
 
-      <div class="columns">
-        <div class="column is-two-thirds">is-two-thirds</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
+          <a class="navbar-item">
+            Documentation
+          </a>
 
-      <div class="columns">
-        <div class="column is-three-fifths">is-three-fifths</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Settings
+            </a>
 
-      <div class="columns">
-        <div class="column is-half">is-half</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
-
-      <div class="columns">
-        <div class="column is-two-fifths">is-two-fifths</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
-
-      <div class="columns">
-        <div class="column is-one-third">is-one-third</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
-
-      <div class="columns">
-        <div class="column is-one-quarter">is-one-quarter</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
-
-      <div class="columns">
-        <div class="column is-one-fifth">is-one-fifth</div>
-        <div class="column">Auto</div>
-        <div class="column">Auto</div>
-      </div>
-    </section>
-    <nav class="level">
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Tweets</p>
-          <p class="title">3,456</p>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Following</p>
-          <p class="title">123</p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Followers</p>
-          <p class="title">456K</p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading">Likes</p>
-          <p class="title">789</p>
-          <p class="title">789</p>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
 
-  <div class="tile is-ancestor">
-    <div class="tile is-4 is-vertical is-parent">
-      <div class="tile is-child box">
-        <p class="title">One</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-      </div>
-      <div class="tile is-child box">
-        <p class="title">Two</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-      </div>
-    </div>
-    <div class="tile is-parent">
-      <div class="tile is-child box">
-        <p class="title">Three</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-        <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
-      </div>
-    </div>
-  </div>
+    <!-- <div class="thanh"> -->
+      <div>
+        
 
-
-  <div class="tile is-ancestor">
-    <div class="tile is-vertical is-8">
-      <div class="tile">
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child box">
-            <!-- Put any content you want -->
-          </article>
-          <article class="tile is-child box">
-            <!-- Put any content you want -->
-          </article>
+    <div class="tile is-ancestor">
+      <div class="tile is-8 is-vertical is-parent">
+        <div class="tile is-child box">
+          <p class="title">One</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
         </div>
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-            <!-- Put any content you want -->
-          </article>
+        <div class="tile is-child box">
+          <p class="title">Two</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child box">
-          <!-- Put any content you want -->
-        </article>
+        <div class="tile is-child box">
+          <p class="title">Three</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+          <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
+          <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+        </div>
       </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <!-- Put any content you want -->
-      </article>
+
     </div>
-  </div>
+
   </body>
 </html>
