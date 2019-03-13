@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+body,
+html,
+.container {
+  height: 100%;
+}
+.container,
+.content {
+  display: flex;
+}
+.container {
+  flex-direction: column;
+}
+.content {
+  /* must set overflow hidden otherwise child div will not be contained */
+  overflow: hidden;
+}
+.content,
+.content div {
+  flex: 1;
+}
+.content div {
+  overflow: auto;
+}
