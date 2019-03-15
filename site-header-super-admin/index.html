@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js fonts-loaded">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Site Header (Super Admin)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+        (function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
+        function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
+        function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
+        
+        (function(){var k=!!document.addEventListener;function l(a,b){k?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function v(a){document.body?a():k?document.addEventListener("DOMContentLoaded",a):document.attachEvent("onreadystatechange",function(){"interactive"!=document.readyState&&"complete"!=document.readyState||a()})};function w(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+        this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
+        function y(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;left:-999px;white-space:nowrap;font:"+b+";"}function z(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function A(a,b){function c(){var a=m;z(a)&&null!==a.a.parentNode&&b(a.g)}var m=a;l(a.b,c);l(a.c,c);z(a)};function B(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var C=null,D=null,H=!!window.FontFace;function I(){if(null===D){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}D=""!==a.style.font}return D}function J(a,b){return[a.style,a.weight,I()?a.stretch:"","100px",b].join(" ")}
+        B.prototype.load=function(a,b){var c=this,m=a||"BESbswy",x=b||3E3,E=(new Date).getTime();return new Promise(function(a,b){if(H){var K=new Promise(function(a,b){function e(){(new Date).getTime()-E>=x?b():document.fonts.load(J(c,c.family),m).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),L=new Promise(function(a,c){setTimeout(c,x)});Promise.race([L,K]).then(function(){a(c)},function(){b(c)})}else v(function(){function q(){var b;if(b=-1!=f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=
+        h)(b=f!=g&&f!=h&&g!=h)||(null===C&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),C=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=C&&(f==r&&g==r&&h==r||f==t&&g==t&&h==t||f==u&&g==u&&h==u)),b=!b;b&&(null!==d.parentNode&&d.parentNode.removeChild(d),clearTimeout(G),a(c))}function F(){if((new Date).getTime()-E>=x)null!==d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,g=n.a.offsetWidth,
+        h=p.a.offsetWidth,q();G=setTimeout(F,50)}}var e=new w(m),n=new w(m),p=new w(m),f=-1,g=-1,h=-1,r=-1,t=-1,u=-1,d=document.createElement("div"),G=0;d.dir="ltr";y(e,J(c,"sans-serif"));y(n,J(c,"serif"));y(p,J(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);r=e.a.offsetWidth;t=n.a.offsetWidth;u=p.a.offsetWidth;F();A(e,function(a){f=a;q()});y(e,J(c,'"'+c.family+'",sans-serif'));A(n,function(a){g=a;q()});y(n,J(c,'"'+c.family+'",serif'));A(p,function(a){h=
+        a;q()});y(p,J(c,'"'+c.family+'",monospace'))})})};window.FontFaceObserver=B;window.FontFaceObserver.prototype.check=window.FontFaceObserver.prototype.load=B.prototype.load;"undefined"!==typeof module&&(module.exports=window.FontFaceObserver);}());
+        
+         (function( w ){
+        	// if the class is already set, we're good.
+        	if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+        		return;
+        	}
+        	var fontA = new w.FontFaceObserver( "Whitney-Medium", {
+        	});
+        	var fontB = new w.FontFaceObserver( "Whitney-SemiBold", {
+        	});
+        	var fontC = new w.FontFaceObserver( "Whitney-Bold", {
+        	});
+        	w.Promise
+        		.all([fontA.check(),fontB.check(),fontC.check()])
+        		.then(function(){
+        			w.document.documentElement.className += " fonts-loaded";
+        			
+        			sessionStorage.fontsloaded = true;
+        		});
+        }( this ));
+        
+      </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Modernizr -->
+  <script>
+        !function(n,e,s){function o(n,e){return typeof n===e}function a(){var n,e,s,a,i,l,r;for(var c in f)if(f.hasOwnProperty(c)){if(n=[],e=f[c],e.name&&(n.push(e.name.toLowerCase()),e.options&&e.options.aliases&&e.options.aliases.length))for(s=0;s<e.options.aliases.length;s++)n.push(e.options.aliases[s].toLowerCase());for(a=o(e.fn,"function")?e.fn():e.fn,i=0;i<n.length;i++)l=n[i],r=l.split("."),1===r.length?Modernizr[r[0]]=a:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=a),t.push((a?"":"no-")+r.join("-"))}}function i(n){var e=r.className,s=Modernizr._config.classPrefix||"";if(c&&(e=e.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");e=e.replace(o,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(e+=" "+s+n.join(" "+s),c?r.className.baseVal=e:r.className=e)}var t=[],f=[],l={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(n,e){var s=this;setTimeout(function(){e(s[n])},0)},addTest:function(n,e,s){f.push({name:n,fn:e,options:s})},addAsyncTest:function(n){f.push({name:null,fn:n})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr;var r=e.documentElement,c="svg"===r.nodeName.toLowerCase();a(),i(t),delete l.addTest,delete l.addAsyncTest;for(var u=0;u<Modernizr._q.length;u++)Modernizr._q[u]();n.Modernizr=Modernizr}(window,document);</script>
+  <!-- Non-Critical CSS - loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT -->
+  <script>
+        (function(a){var b=function(c,k,d){var l=a.document;var m=l.createElement("link");var e;if(k){e=k}else{var i=(l.body||l.getElementsByTagName("head")[0]).childNodes;e=i[i.length-1]}var f=l.styleSheets;m.rel="stylesheet";m.href=c;m.media="only x";function j(n){if(l.body){return n()}setTimeout(function(){j(n)})}j(function(){e.parentNode.insertBefore(m,(k?e:e.nextSibling))});var h=function(o){var n=m.href;var p=f.length;while(p--){if(f[p].href===n){return o()}}setTimeout(function(){h(o)})};function g(){if(m.addEventListener){m.removeEventListener("load",g)}m.media=d||"all"}if(m.addEventListener){m.addEventListener("load",g)}m.onloadcssdefined=h;h(g);return m};if(typeof exports!=="undefined"){exports.loadCSS=b}else{a.loadCSS=b}}(typeof global!=="undefined"?global:this));loadCSS("https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/in2M-async.css");</script>
+  
+  <link rel='stylesheet' href='css/https___codepen_io_ericth.css'>
+<link rel='stylesheet' href='css/https___s3_us_west_2_amaz.css'>
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/in2m-styles.css'>
+<link rel='stylesheet' href='css/https___codepen_io_ericth.css'>
+
+  
+  
+</head>
+
+<body>
+
+  <div class="site-wrap bg-blue-g-5">
+
+  <!-- Admin Bar - transparent BG: note style changes on parent container and searh-bar -->
+  <div class="admin-bar c-white w-100">
+    <div class="container flex flex-wrap ai-center jc-between pt-1 sm-jc-center sm-jc-between">
+      <!-- User Status -->
+      <div class="user-status flex ai-center jc-center mb-1 w-100 sm-jc-start sm-mb-0 sm-w-30">
+        <div class="avatar user-avatar mr-sm sm-mr-1"><img class="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/slug-avatar-square.svg" alt="user avatar"></div>
+        <div class="user-status-text flex flex-wrap flex-d-col ai-start">
+          <div class="status-msg mb-tiny"><span class="user-name">Super Admin</span></div>
+          <div class="profile-links flex ai-center">
+            <a class="pr-sm" href="#">Dashboard</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+      </div>
+      <!-- Search -->
+      <div class="search-form header-search mr-ml-a w-100 mw-15em sm-w-70 sm-mr-0">
+        <label class="sr-only" for="search-form">Search</label>
+        <!-- Search Bar -->
+        <div class="search-bar flex flex-wrap jc-between">
+          <input class="bor-none" id="search-form" type="search" placeholder="search">
+          <button class="bor-none bg-white c-777" type="submit"><svg class="icon"><use xlink:href="#icon-search" ></use></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header (Super Admin) -->
+  <header class="site-header c-white" role="banner">
+    <!-- Nav -->
+    <div class="container flex flex-wrap ai-center jc-between pt-pb-1">
+      <!-- Site Logo -->
+      <h1 class="site-title"><a href="#">
+                <img class="header-logo mw-8em" srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/in2m-logo-white.svg 600w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/in2m-logo-icon-white.svg" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/in2m-logo-white.svg" alt="in2Marketplace.com"><span class="sr-only">in2Marketplace.com</span></a></h1>
+      <!-- Mobile Nav Icon -->
+      <button id="nav-toggle" class="bg-trans nav-toggle-html" aria-hidden="false" aria-expanded="false">
+        <div class="nav-icon"></div>
+      </button>
+      <!-- Main Nav -->
+      <section class="main-nav scroll-nav flex flex-wrap ai-center jc-center sm-flex-g-1" role="navigation">
+        <!-- Nav -->
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/responsive-nav.js"></script>
+        <nav class="nav-collapse" role="navigation">
+          <!-- Admin Bar -->
+          <div class="admin-bar w-100">
+            <div class="container flex flex-wrap ai-center jc-between pt-pb-1 pr-pl-0 sm-flex-nowrap sm-jc-start">
+              <!-- User Status -->
+              <div class="user-status flex ai-center jc-center mb-1 w-100 sm-jc-start sm-mb-0 sm-w-a">
+                <div class="avatar user-avatar img-1-1-tiny mr-sm x-sm-mr-1"><img class="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/slug-avatar-square.svg" alt="user avatar"></div>
+                <div class="user-status-text flex flex-wrap flex-d-col ai-start">
+                  <div class="status-msg mb-tiny"><span class="user-name">Jenny Salesperson</span></div>
+                  <div class="profile-links flex ai-center">
+                    <a class="pr-sm" href="#">Dashboard</a>
+                    <a href="#">Logout</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Search -->
+              <div class="search-form header-search mr-ml-a mw-20em w-100 sm-mr-0 sm-pl-1 sm-w-a">
+                <label class="sr-only" for="search-form">Search</label>
+                <!-- Search Bar -->
+                <div class="search-bar flex flex-wrap jc-between">
+                  <input id="search-form" type="search" placeholder="search">
+                  <button class="bg-white c-777" type="submit"> <svg class="icon"><use xlink:href="#icon-search" /></svg>
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="list-reset">
+            <li class="dropdown">
+              <a href="#">View</a>
+              <ul class="sub-menu">
+                <li><a href="sa-view-sales-org.html">Sales Organizations</a></li>
+                <li><a href="sa-view-packages-offers.html">Packages & Offers</a></li>
+                <li><a href="sa-view-commissions.html">Commissions</a></li>
+                <li><a href="sa-view-notifications.html">Notifications</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Setup</a>
+              <ul class="sub-menu">
+                <li><a href="sa-setup-capacity.html">Capacity</a></li>
+                <li><a href="sa-setup-short-codes.html">Short Codes</a></li>
+                <li><a href="sa-setup-packages.html">Packages</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Create</a>
+              <ul class="sub-menu">
+                <li><a href="sa-create-super-admin.html">Super Admin Profile</a></li>
+                <li><a href="sa-create-sales-company.html">Sales Company</a></li>
+                <li><a href="sa-create-sales-group.html">Sales Group</a></li>
+                <li><a href="sa-create-sales-person.html">Sales Person</a></li>
+                <li><a href="sa-create-email-templates.html">Email Templates</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Manage</a>
+              <ul class="sub-menu">
+                <li><a href="sa-manage-super-admin.html">Super Admin Profile</a></li>
+                <li><a href="sa-manage-sales-company.html">Sales Company</a></li>
+                <li><a href="sa-manage-sales-group.html">Sales Group</a></li>
+                <li><a href="sa-manage-sales-person.html">Sales Person</a></li>
+                <li><a href="sa-manage-retail-customers.html">Retail Customers</a></li>
+                <li><a href="sa-manage-packages.html">Packages</a></li>
+                <li>
+                  <a href="#">Email Templates</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- end / -->
+          </ul>
+        </nav>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/mobile-nav.js"></script>
+      </section>
+    </div>
+  </header>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97621/script-dev.js"></script>
+  
+  
+
+</body>
+
+</html>

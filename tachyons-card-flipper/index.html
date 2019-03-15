@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="ph3 ph sans-serif">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tachyons card flipper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.1/tachyons.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <section>
+    <h1 class="fw8 f3 ttu mv0">Marco's cards</h1>
+    <p class="small f7 black-50">Click to view back of card</p>
+    <div class="flex flex-wrap">
+        <div class="flipper w-100 w-third-m w-third-l relative" onclick="this.classList.toggle('hover');">
+            <div class="card pa1">
+                <div class="front relative black-10 hover-red"><img class="ba" src="https://spokesmanreview.s3.amazonaws.com/img/marco-gonzales/marco-gonzales-gonzaga-front.jpg" alt=""></div>
+                <div class="back absolute top-0 black-10"><img class="ba" src="https://spokesmanreview.s3.amazonaws.com/img/marco-gonzales/marco-gonzales-gonzaga-back.png" alt=""></div>
+            </div>
+        </div>
+        <div class="flipper w-100 w-third-m w-third-l relative" onclick="this.classList.toggle('hover');">
+            <div class="card pa1">
+                <div class="front relative black-10 hover-red"><img class="ba" src="https://spokesmanreview.s3.amazonaws.com/img/marco-gonzales/marco-gonzales-stlouis-front.jpg" alt=""></div>
+                <div class="back absolute top-0 black-10"><img class="ba" src="https://spokesmanreview.s3.amazonaws.com/img/marco-gonzales/marco-gonzales-stlouis-back.png" alt=""></div>
+            </div>
+        </div>
+        <div class="flipper w-100 w-third-m w-third-l relative" onclick="this.classList.toggle('hover');">
+            <div class="card pa1">
+                <div class="front relative black-10 hover-red"><img class="ba" src="https://spokesmanreview.s3.amazonaws.com/img/marco-gonzales/marco-gonzales-seattle-front.jpg" alt=""></div>
+                <div class="back absolute top-0 black-10"><img class="ba" src="https://spokesmanreview.s3.amazonaws.com/img/marco-gonzales/marco-gonzales-seattle-back.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<ul class="list mv3 pa0 flex-m flex-l justify-center f6">
+    <li class="ttu fw8 mb2">Share these cards:</li>
+    <li class="mb2 "><a class="hover-dark-red dark-blue link pv2 ph3" href="https://twitter.com/share?text={{flatpage.title|urlencode}}&amp;url={{flatpage.get_absolute_url}}" target="_blank"><i class="fa fa-twitter"></i><span class="dn-s">  Twitter</span></a></li>
+    <li class="mb2 "><a class="hover-dark-red dark-blue link pv2 ph3" href="https://www.facebook.com/dialog/feed?link={{flatpage.get_absolute_url}}&amp;app_id=316254480466&amp;redirect_uri={{flatpage.get_absolute_url}}&amp;caption={{flatpage.title|urlencode}}"><i class="fa fa-facebook"></i><span class="dn-s">  Facebook</span></a></li>
+    <li class="mb2 "><a class="hover-dark-red dark-blue link pv2 ph3" href="mailto:?subject={{ flatpage.title|urlencode }} — from The Spokesman-Review&amp;body={{flatpage.get_absolute_url}}" target="_blank"><i class="fa fa-envelope-o"></i><span class="dn-s">&nbsp;Email</span></a></li>
+    <li class="mb2 sr-sms dn-m dn-l"><a class="hover-dark-red dark-blue link pv2 ph3" href="sms:"  data-sms="http://{{ current_site }}{{ flatpage.get_absolute_url }}"><i class="fa fa-commenting" aria-hidden="true"></i><span>&nbsp;SMS</span></a></li>
+</ul>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

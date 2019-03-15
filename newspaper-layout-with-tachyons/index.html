@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Newspaper layout with Tachyons</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  <link rel='stylesheet' href='https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <body class="mw-100">
+<header class="relative top-0 bg-white mb3 z-1">
+    <div class="pt4 ph3 ph4-ns mw9 center">
+        <nav id="primary-nav" class="relative flex items-stretch justify-center justify-between-l mb3">
+            <div class="order-1 flex-auto">    
+                <div class="tc">
+                    <a class="dib black link hover-dark-blue mb3 f3 f2-l mw-100" href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mw-100" height="1em" fill="currentColor" viewBox="0 0 500 33.223"><title>The Spokesman-Review</title><path d="M80.689 25.593L79.05 32.35h-.221c-.549-.27-1.129-.442-2.08-.442H58.674v-.615c1.297-.27 2.155-1.018 2.155-2.372V11.172c0-1.223-.831-1.859-2.155-2.147V8.4h17.163c.794 0 1.697-.141 2.116-.406h.219l1.352 6.463-.657.223c-1.23-1.432-2.803-2.121-4.672-2.121h-6.832v4.743h5.517c1.669 0 2.683-.611 3.028-1.672h.658v7.45h-.658c-.315-1.042-1.19-1.613-2.919-1.613h-5.625v6.283h7.854c2.504 0 3.831-.767 4.782-2.337l.689.18zm-24.06 6.315H45.824v-.615c1.297-.321 2.153-.909 2.153-2.481v-7.346h-9.092v7.196c0 1.673.794 2.335 2.119 2.631v.615H30.198v-.615c1.33-.321 2.083-.909 2.083-2.481v-17.64c0-1.309-.733-1.833-2.083-2.147V8.4h10.806v.624c-1.352.26-2.119.712-2.119 2.586v5.69h9.092v-6.129c0-1.309-.801-1.833-2.153-2.147V8.4h10.805v.624c-1.294.26-2.114.712-2.114 2.586v17.051c0 1.681.792 2.335 2.114 2.631v.616z"/><path d="M30.891 7.669l-.767.216c-1.562-1.699-3.075-2.264-5.147-2.264h-5.625v22.642c0 1.935 1.133 2.641 2.629 2.989v.656H8.874v-.656c1.394-.321 2.593-1.034 2.593-2.844V5.621H5.771c-2.073 0-3.506.644-5.002 2.264L0 7.669 1.499 0h.147c.46.289 1.546.619 2.811.619h21.798c1.38 0 2.532-.33 2.989-.619h.112l1.535 7.669zM330.058 9.024c-1.372.2-2.117 1.048-2.117 2.263v20.621h-3.103L311.91 17.636h-.072v11.135c0 1.563.773 2.251 2.08 2.521v.615h-9.782v-.615c1.441-.293 2.117-1.105 2.117-2.521V11.502c0-1.678-.771-2.116-2.117-2.443V8.4h8.546c.14.422.521 1.048 1.06 1.645l8.542 9.522h.113v-8.355c0-1.495-.944-1.9-2.126-2.188V8.4h9.787v.624zm-53.123 22.884h-10.259v-.615c1.208-.189 1.753-.699 1.753-1.569 0-.237-.037-.579-.073-.879l-1.131-9.601-4.746 12.664h-2.811l-4.676-12.807-1.167 9.561a12.922 12.922 0 0 0-.109 1.642c0 .322.259.865 1.314.989v.615h-8.615v-.615c1.154-.16 1.627-.661 1.75-1.499l2.666-18.074c.026-.185.11-.962.11-1.203 0-.799-.366-1.309-1.278-1.493V8.4h7.998c.005.812.483 2.204.727 2.921l3.215 9.24 3.211-9.24c.312-.889.624-2.187.624-2.921h8.034v.624c-1.008.145-1.356.65-1.356 1.307 0 .417.118 1.113.221 1.825l2.406 16.505c.261 1.766.856 2.426 2.193 2.631v.616zm-30.852-6.754c0 4.351-3.066 7.196-9.709 7.196-2.557 0-4.54-.442-6.1-.767-1.073-.229-2.495-.696-3.578-.696-.905 0-1.265.265-1.752.696l-.583-.221 1.752-7.924.767.118c1.149 2.471 3.719 4.342 8.727 4.342 2.984 0 4.233-.764 4.233-2.043 0-1.23-.995-1.8-3.178-2.67l-5.403-2.158c-2.76-1.097-4.782-2.935-4.782-5.913 0-3.971 3.709-6.97 9.13-6.97 2.037 0 3.485.314 4.597.551.795.167 1.749.473 2.557.473.865 0 1.567-.219 1.975-.519l.471.186-1.461 7.012-.658-.073c-.689-1.443-3.192-3.215-6.713-3.215-2.887 0-3.834.621-3.834 1.573 0 .876.905 1.292 3.323 2.264l3.831 1.533c3.843 1.538 6.388 3.513 6.388 7.225zm-23.221.439l-1.642 6.757h-.257c-.545-.27-1.091-.442-2.045-.442h-18.107v-.47c1.294-.269 2.155-1.017 2.155-2.373V11.172c0-1.223-.832-1.859-2.155-2.147V8.4h17.162c.795 0 1.734-.141 2.154-.406h.218l1.351 6.463-.662.223c-1.226-1.432-2.799-2.121-4.672-2.121h-6.863v4.743h5.549c1.671 0 2.65-.611 2.996-1.672h.695v7.45h-.695c-.32-1.042-1.159-1.613-2.887-1.613h-5.658v6.283h7.848c2.51 0 3.838-.767 4.787-2.337l.728.18zm-23.329 6.315h-12.051v-.615c.814-.16 1.569-.511 1.569-1.059 0-.458-.169-.804-.545-1.39l-4.418-6.896-2.554 2.369v4.344c0 1.167.558 2.361 2.118 2.631v.615h-10.806v-.615c1.35-.375 2.147-.86 2.147-2.521V11.172c0-1.492-.88-1.866-2.147-2.147V8.4h10.806v.624c-1.281.26-2.118.683-2.118 2.478v6.427l6.133-6.174c.366-.366.912-1.042.912-1.642 0-.665-.515-.985-1.354-1.089V8.4h11.616v.624c-.723 0-1.614.577-2.559 1.458l-7.558 7.045 8.361 12.526c.57.849 1.713 1.139 2.448 1.239v.616zm-77.293-8.942c0 6.064-4.111 9.791-12.888 9.791-3.374 0-5.972-.374-8.034-.811-1.416-.3-3.315-.946-4.745-.946-1.198 0-1.802.349-2.411.946l-.73-.253 2.483-11.025.95.07c1.598 3.277 4.954 7.011 11.573 7.011 3.946 0 5.843-1.572 5.843-3.543 0-1.621-.669-2.595-4.053-3.942l-7.158-2.848c-3.646-1.453-6.568-3.846-6.568-7.708 0-5.801 4.816-9.305 11.975-9.305 2.689 0 4.666.35 6.132.657 1.045.216 2.329.694 3.393.694 1.145 0 2.063-.304 2.597-.694l.657.184-1.974 9.46-.91-.148c-.916-1.907-3.441-5.149-8.84-5.149-3.385 0-5.146 1.159-5.146 2.812 0 1.308.996 2.298 4.197 3.537l5.184 2.011c5.096 1.971 8.473 4.3 8.473 9.199zm181.456 8.942h-10.769v-.615c.871-.189 1.349-.583 1.349-1.239 0-.35-.104-.767-.252-1.133l-.26-.621h-7.811l-.29.765a4.285 4.285 0 0 0-.221 1.169c0 .508.389.847 1.531 1.059v.615h-9.713v-.615c1.218-.216 1.762-.675 2.23-1.793l8.8-21.1h4.525l8.034 20.444c.708 1.793 1.586 2.147 2.848 2.448v.616zm-11.354-7.554l-2.408-7.009h-.11l-2.445 7.009h4.963zm-120.63-3.793c0 7.702-5.869 12.003-12.304 12.003-6.307 0-12.196-4.301-12.196-12.003 0-8.432 5.43-12.599 12.196-12.599 6.904 0 12.304 4.167 12.304 12.599zm-6.867 0c0-6.285-2.665-8.251-5.438-8.251-2.596 0-5.368 2.037-5.368 8.251 0 5.58 2.701 7.666 5.368 7.666 2.437 0 5.438-1.755 5.438-7.666zm-19.385-4.525c0 5.614-5.109 7.768-10.515 7.768h-2.631v4.714c0 1.593.694 2.454 2.192 2.775v.615h-10.879v-.615c1.438-.386 2.116-1.059 2.116-2.631v-17.49c0-1.525-1.018-1.854-2.116-2.147V8.4h11.062c5.87 0 10.771 2.393 10.771 7.636zm-6.719.215c0-2.69-2.362-3.693-5.039-3.693h-1.388v7.118h1.464c2.684 0 4.963-.64 4.963-3.425zM500 9.02c-1.038.177-1.67.623-2.152 1.785l-8.839 21.104h-4.453l-4.091-9.926-4.119 9.926h-4.493l-8.511-20.807c-.584-1.445-1.412-1.865-2.703-2.081V8.4h11.179v.62c-.818.177-1.389.548-1.389 1.271 0 .302.255.977.364 1.276l4.054 11.286 2.808-7.921-1.605-3.76c-.604-1.416-1.312-1.936-2.586-2.152V8.4h11.021v.62c-.819.177-1.427.615-1.427 1.271 0 .302.258.868.369 1.173l4.051 11.388 4.124-11.427c.098-.273.262-.788.262-1.24 0-.606-.579-1.016-1.536-1.166V8.4H500v.62zm-38.445 16.605l-1.644 6.718h-.254c-.55-.267-1.136-.436-2.084-.436h-18.034v-.615c1.3-.27 2.084-1.024 2.084-2.372V11.172c0-1.228-.76-1.866-2.084-2.152V8.4h17.122c.796 0 1.7-.146 2.118-.406h.255l1.352 6.463-.695.214c-1.229-1.429-2.806-2.113-4.672-2.113h-6.826v4.743h5.55c1.672 0 2.607-.611 2.957-1.675h.728v7.447h-.728c-.314-1.04-1.158-1.607-2.887-1.607h-5.62v6.276h7.849c2.509 0 3.905-.766 4.855-2.331l.658.214zm-24.168 6.283h-10.812v-.615c1.322-.361 2.083-.925 2.083-2.413V11.172c0-1.274-.695-1.835-2.083-2.152V8.4h10.812v.62c-1.382.286-2.122.805-2.122 2.445v17.16c0 1.655.712 2.342 2.122 2.668v.615zM425.851 9.02c-1.07.177-1.763.667-2.23 1.785l-8.831 21.104h-4.534l-8.467-20.807c-.547-1.345-1.409-1.788-2.703-2.081V8.4h11.101v.62c-.815.177-1.353.582-1.353 1.312 0 .301.219.865.33 1.166l4.093 11.355 4.119-11.427c.101-.273.253-.788.253-1.24 0-.606-.574-1.016-1.527-1.166V8.4h9.75v.62zm-25.959 16.605l-1.648 6.718h-.253c-.547-.267-1.095-.436-2.048-.436H377.87v-.615c1.298-.27 2.119-1.024 2.119-2.372V11.172c0-1.228-.795-1.866-2.119-2.152V8.4h17.127c.798 0 1.737-.146 2.154-.406h.219l1.349 6.463-.699.214c-1.226-1.429-2.76-2.113-4.63-2.113h-6.859v4.743h5.548c1.665 0 2.644-.611 2.993-1.675h.691v7.447h-.691c-.32-1.04-1.16-1.607-2.886-1.607h-5.655v6.276h7.853c2.492 0 3.861-.766 4.811-2.331l.697.214zm-54.923-9.235l-1.496 5.151h-9.635l1.464-5.151zm32.173 16.069l-.512.764c-9.13-.429-13.608-4.496-16.867-12.446h-1.822v7.407c0 1.951 1.126 2.686 2.627 3.025v.698h-13.106v-.698c1.579-.392 2.626-1.059 2.626-3.025V4.201c0-1.735-1.121-2.353-2.777-2.783V.613h13.946c8.222 0 13.696 3.148 13.696 9.751 0 4.335-3.114 7.595-7.961 8.913 1.323 4.501 5.399 10.492 10.15 13.182zm-10.223-21.726c0-3.64-2.795-5.112-6.682-5.112h-2.297v10.153h2.405c3.88 0 6.574-1.064 6.574-5.041z"/></svg>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-between justify-center-l">
+                    <a class="link hover-light-blue gray f6 f3-ns ph2-l sans-serif bb bw2 b--transparent bb-hover  avenir fw2-ns" href="#" title="Home">News</a>
+                    <a class="link hover-dark-red gray f6 f3-ns ph2-l sans-serif bb bw2 b--transparent bb-hover  avenir fw2-ns" href="#" title="Sports">Sports</a>
+                    <a class="link hover-green gray f6 f3-ns ph2-l sans-serif bb bw2 b--transparent bb-hover  avenir fw2-ns" href="#" title="Arts &amp; Entertainment">A&amp;E</a>
+                    <a class="link hover-gold gray f6 f3-ns ph2-l sans-serif bb bw2 b--transparent bb-hover  avenir fw2-ns" href="#" title="Opinion">Opinion</a>
+                    <a class="link hover-blue gray f6 f3-ns ph2-l sans-serif bb bw2 b--transparent bb-hover  avenir fw2-ns" id="menu-toggle"  href="#" title="Site Menu">Menu&nbsp;<i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <aside class="absolute vertical dn db-l pr4 order-0 self-start"><img class="db" alt="sample-image" src="https://spokesmanreview.s3.amazonaws.com/ads/9267326621769753690.png"></aside>
+            <aside class="absolute vertical right-0 dn db-l pl4 order-last self-end"><img class="db" alt="sample-image" src="https://spokesmanreview.s3.amazonaws.com/ads/16715559469332312907.jpg"></aside>
+        </nav>
+    </div>
+    <nav id="menu" class="hidden min-vh-100 w-100 mw-100 bg-light-gray absolute bb bw2 b--navy-blue wc">
+        <div class="pv3 ph3 ph4-ns">
+
+                <form class="mw-100">
+                    <input class="outline-0 f4 ba bg-white b--light-silver br-pill pv2 pr2 pl4 dark-gray shadow-hover bg-animate w-100 mw-100" type="search" placeholder="Search">
+                </form>
+
+            <ul class="list ph0 f5 sans-serif tc">
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">E-Edition</a></li>
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">Obituaries</a></li>
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">Classifieds</a></li>
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">Customer Service</a></li>
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">Login</a></li>
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">Register</a></li>
+                <li class="dib-l mb3 mb0-l mr3"><a class="link dim dark-gray" href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="ph3 ph4-ns mw9 center">
+        <nav id="sub-nav" class="mw-100 db tc inline flex flex-wrap items-stretch f6 sans-serif overflow-hidden bt bl b--black-10 br2">
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Home"><span class="dib">Zags</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Sports"><span class="dib">Cougars</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Arts &amp; Entertainment"><span class="dib">Chiefs</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Opinion"><span class="dib">Indians</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Home"><span class="dib">Eagles</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Sports"><span class="dib">Vandals</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Arts &amp; Entertainment"><span class="dib">Empire</span></a>
+            <a class="link gray hover-white bg-near-white hover-bg-dark-blue bg-animate pa2 br bb b--black-10 dib flex-auto" href="#" title="Opinion"><span class="dib">Indians</span></a>
+        </nav>
+    </div>
+</header>
+
+<aside class="cf mb4 mw9 center dn db-l">
+    <div class="relative horizontal fl z-0">
+        <img alt="sample-image" src="https://spokesmanreview.s3.amazonaws.com/ads/pencil.png">
+    </div>
+</aside>
+
+<main class="mw9 center ph3 ph4-ns cf">
+        <section class="non-ad-column pr4-l fl-l cf">
+
+            <div class="w-70-l fr-l">
+                <article class="mb4 pb2 bb b--black-10">
+                    <figure class="ma0 mb4">
+                        <img alt="sample-image" src="https://media.spokesman.com/photos/2016/12/01/Trump.JPG_MoXGwGk_r1170x658.jpg?89d2de535df496bcc0b4c68760cdb0325c7c9289">
+                        <figcaption class="f6 fw4 sans-serif">President-elect Donald Trump talks to the media as he stands with retired Marine Corps Gen. James Mattis at the Trump National Golf Club Bedminster clubhouse in Bedminster, N.J., Nov. 19. (Carolyn Kaster / Associated Press)</figcaption>
+                    </figure>
+                    <header class="mb3">
+                        <h1 class="mt0 mb2 f2 sans-serif"><a class="black dim link" href="#">Retired Marine Gen. James Mattis is Trump’s secretary of defense pick, source says</a></h1>
+                        <p class="mt0 f6 tu gray sans-serif">THURSDAY, DEC. 1, 2016, 2:06 P.M.</p>
+                    </header>
+                    <div class="serif f4 lh-copy">
+                        <p>President-elect Donald Trump has chosen retired Marine Gen. James N. Mattis to be secretary of defense, nominating a former senior military officer who led operations across the Middle East to run the Pentagon less than four
+                            years after he hung up his uniform, according to people familiar with the decision.</p>
+                    </div>
+                </article>
+                <div class="cf mb4 mhn4-ns">
+                    <div class="w-50-l fl-l ph4-ns mb4">
+                        <h2 class="tracked-tight sans fw8 f4 mv0 "><a class="black link" href="#">John Blanchette</a></h2>
+                        <ul class="list pl0 f6 sans ">
+                            <li class="mb3 "><a class="dark-blue link" href="#">Blanchette: Bryants of the world serve useful purpose while hoping pigs fly</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">John Blanchette: Future looks bright for Gonzaga with play of young Bulldogs</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">John Blanchette: West Georgia coach Michael Cooney has fond memories of Gonzaga hoops</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-50-l fl-l ph4-ns mb4">
+                        <h2 class="tracked-tight sans fw8 f4 mv0 "><a class="black link" href="#">Off the bench</a></h2>
+                        <ul class="list pl0 f6 sans ">
+                            <li class="mb3 "><a class="dark-blue link" href="#">National anthem sung in Salish at Gonzaga-Bryant game</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">Japanese writers meet unexpectedly while covering Gonzaga’s Rui Hachimura</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">Zags will again wear turquoise uniforms in honor of Native American Heritage Month</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-50-l fl-l ph4-ns mb4 cb">
+                        <h2 class="tracked-tight sans fw8 f4 mv0 "><a class="black link" href="#">TV Take</a></h2>
+                        <ul class="list pl0 f6 sans ">
+                            <li class="mb3 "><a class="dark-blue link" href="#">TV Take: Gonzaga finds a way to hold off Iowa State’s ‘unbelievable’ comeback</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">TV Take: Gonzaga overcomes adversity, Gators in tournament semifinal</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">TV Take: Gonzaga's holiday feast included a few too many turnovers early</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-50-l fl-l ph4-ns mb4">
+                        <h2 class="tracked-tight sans fw8 f4 mv0 "><a class="black link" href="#">Catching up</a></h2>
+                        <ul class="list pl0 f6 sans ">
+                            <li class="mb3 "><a class="dark-blue link" href="#">Former Gonzaga great Turiaf announces retirement</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">GU notebook: Quentin Hall looks back fondly at Gonzaga’s ’99 tournament run</a></li>
+                            <li class="mb3 "><a class="dark-blue link" href="#">Gonzaga redux: Santangelo, Calvary team up for Hoopfest</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="w-30-l pr4-l">
+                <article class="mb4 bb b--black-10">
+                    <figure class="mt0 mh0">
+                        <img alt="sample-image" src="https://media.spokesman.com/photos/2016/11/30/APTOPIX_Officer_Shot_Tacoma.JPG_r530x298.jpg?9c65fc93f9adcb95b27d7a051d2272b1ee752497" />
+                    </figure>
+                    <h2 class="f3 mb2 serif"><a class="black dim link" href="#">Police: Suspect in Tacoma officer’s death shot and killed</a></h2>
+                    <p class="mt0 f6 tu gray sans-serif ">11:33 A.M.</p>
+                </article>
+                <article class="mb4 bb b--black-10">
+                    <figure class="mt0 mh0">
+                        <img alt="sample-image" src="https://media.spokesman.com/photos/2016/11/30/SRX_KATIE_KRAUSS.JPG_r530x298.jpg?9c65fc93f9adcb95b27d7a051d2272b1ee752497" />
+                    </figure>
+                    <h2 class="f3 mb2 serif"><a class="black dim link" href="#">Spotting scopes stolen from wildlife viewing blind </a></h2>
+                    <p class="mt0 f6 tu gray sans-serif ">12:58 P.M.</p>
+                </article>
+                <article class="mb4 bb b--black-10">
+                    <figure class="mt0 mh0">
+                        <img alt="sample-image" src="https://media.spokesman.com/photos/2016/11/30/MAGICLANTERN_001_TT.JPG_GQ7U0Xr_r530x298.jpg?9c65fc93f9adcb95b27d7a051d2272b1ee752497" />
+                    </figure>
+                    <h2 class="f3 mb2 serif"><a class="black dim link" href="#">Magic Lantern fills niche for film fans </a></h2>
+                    <p class="mt0 f6 tu gray sans-serif ">11:45 A.M.</p>
+                </article>
+            </div>
+        </section>
+        <section class="fl-ns ad-column">
+            <img alt="sample-image" src="https://spokesmanreview.s3.amazonaws.com/ads/300x600.png">
+        </section>
+</main>
+<img id="corner-ad" class="fixed dn db-xl top-0 right-0 z-2" src="https://spokesmanreview.s3.amazonaws.com/ads/corner.png">
+</body>
+  <script src='https://unpkg.com/jquery@3.1.1/dist/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

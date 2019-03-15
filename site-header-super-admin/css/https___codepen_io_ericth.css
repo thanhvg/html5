@@ -1,0 +1,2545 @@
+// Media Queries
+
+$break-240: 15em; // 240px
+
+$break-320: 20em; // 320px
+
+$break-375: 23.438em; // 375px
+ 
+$break-480: 30em; // 480px
+
+$break-540: 33.75em; // 540px
+
+$break-640: 40em; // 640px
+
+$break-768: 48em; // 768px
+
+$break-800: 50em; // 800px
+
+$break-900: 56.25em; // 900px 
+
+$break-992: 62em; // 992px
+
+$break-1000: 62.5em; // 1000px
+
+$break-1200: 75em; // 1200px 
+
+$break-1600: 100em; // 1600px
+
+$break-2000: 125em; // 2000px
+
+$break-2400: 150em; // 2400px
+
+// I know what you are thinking, I want to get rid of this.
+// But this supports some older pens and I'm lazy.
+
+$break-tiny-phone: $break-320; // 320px
+ 
+$break-sm-phone: $break-480; // 480px
+
+$break-md-phone: $break-540; // > 540px
+
+$break-ml-phone: $break-640; // 640px
+
+$break-lg-phone: $break-768; // 768px
+
+$break-md-screen: $break-992; // 992px
+
+$break-lg-screen: $break-1200; // 1200px 
+
+$break-xl-screen: $break-1600; // 1600px
+
+$break-xxl-screen: $break-2000; // 2000px
+
+$break-widescreen: $break-2400; // 2400px
+
+// Default Font Stacks
+
+$sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$serif: 'Cambria', Georgia, serif;
+
+// ******* Mixins ******* //
+
+// Content Fade In
+
+@mixin content-fade-in {
+
+  @keyframes bg-fade-in {
+    from { background-color: #fff }
+  }
+  
+  @keyframes content-fade-in {
+    from { opacity: 0 }
+  }
+  
+  // html { animation: 1.5s bg-fade-in; }
+  
+  // body { animation: 1.5s content-fade-in }
+
+}
+
+// fade animation
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }  
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }  
+}
+
+@mixin fade-in {
+  animation: fade-in .4s linear forwards;
+  transition: opacity .4s ease;  
+}
+
+@mixin fade-out {
+  animation: fade-out .4s linear forwards;
+  transition: opacity .4s ease;  
+}
+
+// Tool Tip
+
+@mixin tool-tip {
+  background: hsla(203,100%,90%,1);
+  box-shadow: 0 0 0 .25em hsl(203, 100%, 80%), 7px 7px 0 rgba(0,0,0,.5);
+  color: #333;        
+  padding: .5em .5em;
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  line-height: 1;
+  font-size: .875rem;
+  text-align: center;        
+  @include fade-in;
+  z-index: 10000;
+  // > 480
+  @media (min-width: $break-sm-phone) {
+    min-width: 8em;
+  }
+}
+
+[data-tooltip] {
+  position: relative; 
+  &:hover,
+  &:focus {      
+    cursor: help;
+    &:after {        
+      @include tool-tip;        
+      content: attr(data-tooltip);
+    }     
+  }
+}
+
+// skip to main
+
+// .skip-link {
+//   display: flex;
+//   justify-content: center;
+//   font-size: 1.5rem;
+//   line-height: 1;
+//   max-height: 0;
+//   outline: none;
+//   overflow: hidden;
+//   //position: relative;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   text-align: center;
+//   transition: .3s ease;
+//   width: 100%;
+//   z-index: 1001;
+//   &:focus {
+//     box-shadow: none;
+//     color: #FFF;
+//     max-height: 10vmax;
+//     padding-top: .5em;
+//     padding-bottom: .5em;
+//   }
+// }
+
+.skip-link {
+  background: var(--action);
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  line-height: 1;
+  max-height: 0;
+  outline: none;
+  overflow: hidden;
+  position: sticky;
+  text-align: center;
+  transition: .35s ease;
+  width: 100%;
+  z-index: 1001;
+  &:focus {
+    box-shadow: none;
+    color: #FFF;
+    max-height: 6.25em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+}
+
+.no-support {
+  background: tomato;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-row: 1 / 1;
+  // position: sticky;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  z-index: 1;
+  .close-button {
+    background: rgba(#000, .2);
+    color: #FFF;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+}
+
+ @supports (display: grid) {
+   
+  .no-support {
+    display: none;
+    
+    > * {
+      padding: 1rem;
+    }
+  }
+   
+  #body:target {
+    
+    .no-support {
+      display: none;
+    }
+  }
+}
+
+// icons
+
+@mixin rotate-180 {
+  transform: rotate(180deg);
+}
+
+@mixin rotate-90 {
+  transform: rotate(90deg);
+}
+
+@mixin rotate-neg-90 {
+  transform: rotate(-90deg);
+}
+
+@mixin rotate-45 {
+  transform: rotate(45deg);
+}
+
+@mixin rotate-neg-45 {
+  transform: rotate(-45deg);
+}
+
+// Panel Background Defaults
+
+@mixin panel-bg-scale {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin panel-bg-repeat {
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: contain;
+}
+
+@mixin panel-bg-contain {
+  background-repeat: no-repeat;
+  background-size: cover;
+  // > 640
+  @media (min-width: $break-ml-phone) {
+    background-size: contain;
+  }
+}
+
+// Opacity helpers
+
+@mixin opacity($opacity) {
+   opacity: $opacity;
+   $opacityIE: $opacity * 100;
+   //filter: alpha(opacity=$opacityIE);
+}
+
+@mixin opacity-50 {
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+}
+
+@mixin opacity-80 {
+	filter:alpha(opacity=80);
+	opacity: 0.8;
+}
+
+// Text
+
+@mixin post-reset {
+  list-style-type: none;
+}
+
+@mixin post-list {
+  list-style-type: none;
+  margin: {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: auto;
+  }           
+  padding: {
+    left: 0;
+    top: .65em;
+    bottom: .65em;
+  }
+  // Post Item
+  & > li {
+    //display: flex;
+    margin-bottom: .5em;
+    width: 100%;  
+    &:last-child {
+      margin-bottom: 0; 
+    } 
+  }
+  & > li > a {
+    text-decoration: none;   
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  // 400
+  @media (min-width: 25em) {
+    padding-left: .25em;
+  }
+}
+
+@mixin p-style {
+  font-size: 1em;
+  line-height: 1.35;
+  margin: {
+    bottom: .875em;
+    bottom: 1.125rem;
+  } 
+}
+
+// Reg Mark adjustments for copy
+
+@mixin reg-mark {
+	font-size: 9px; 
+	vertical-align: text-top;
+}
+
+// Caret UI element
+
+@mixin caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  padding: 0; 
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  &:before {
+    display: none;  
+  }
+}
+
+// P overflow fix to hide text at smaller screens
+
+@mixin text-overflow {
+	overflow: hidden;	
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+
+@mixin text-overflow-off {
+	overflow: visible; 
+	white-space: normal;
+}
+
+@mixin link-shadow {
+  text-shadow: .05em 0 0 #F9F9F9, -0.05em 0 0 #F9F9F9, 0 .05em 0 #F9F9F9, 0 -0.05em 0 #F9F9F9, .1em 0 0 #F9F9F9, -0.1em 0 0 #F9F9F9, 0 .1em 0 #F9F9F9, 0 -0.1em 0 #F9F9F9;
+  background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+  background-repeat: repeat-x;
+  background-position: bottom .05em center;
+  background-size: 100% .07em;
+}
+
+@mixin no-link-shadow {
+  text-shadow: none;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+// Form Input 
+
+@mixin form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+// Date Label
+
+@mixin date-label {
+	background-color: $red-label-bg;
+	color: #FFF;
+	font-size: 11px;
+	font-style: normal;
+	letter-spacing: 0;
+	line-height: 14px;
+	margin: 0;
+	padding: 2px 10px 3px 10px;
+	text-shadow: $blk-text-shadow-neg;
+}
+
+.has-tooltip {
+  position: relative;
+  &:hover .tooltip,
+  &:focus .tooltip,
+  a:focus .tooltip,
+  &:hover .icon-tooltip,
+  &:focus .icon-tooltip,
+  a:focus .icon-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@mixin tooltip {
+  background-color: hotpink;
+  color: #FFF;
+  //display: none;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: .875rem;
+  opacity: 0;
+  padding: .5rem 1rem .65rem;
+  position: absolute;
+  bottom: 100%;
+  left: -100%;
+  left: -50%;
+  right: -50%;
+  visibility: hidden;
+  text-align: center;
+  transform: translateY(10px);
+  transition: all .25s ease-out;
+  border-radius: .2rem;
+  z-index: 50;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border: 8px solid transparent;
+    border-top-color: hotpink;
+    bottom: -16px;
+    left: calc(50% - 8px);
+  }
+  &.flush-r {
+    right: -.5rem;
+    left: auto;
+    &::before {
+      right: .75rem;
+      left: auto;        
+    }
+  }
+  &.flush-l {
+    left: -.5rem;
+    &::before {
+      left: .65rem;        
+    }
+  }
+}
+
+.tooltip,
+.icon-tooltip {
+  @include tooltip;
+}
+
+.icon-tooltip {
+  left: calc(50% - 2.5rem);
+  padding-right: .25rem;
+  padding-left: .25rem;
+  text-align: center;
+  white-space: pre;
+  width: 5rem;
+  &::before {
+    bottom: -14px;
+  }
+}
+
+// Image Replacement "hack"
+
+@mixin hide-button-text {
+  background-color: transparent;
+  border:0;
+  color: transparent;  
+  font: 0/0; 
+  text-shadow: none;
+}
+
+@mixin hide-text {
+  color: transparent !important;
+  font: 0/0	!important;
+  &:hover,
+  &:focus {
+	  color: transparent !important;
+    font: 0/0 !important;
+  }
+}
+
+// Centered Text Border
+
+@mixin text-border-ctr {
+	&:before {
+	  content: '';
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: rgba(207,207,207,0.3);
+    top: 50%;
+    z-index: -2;	
+	}
+	&:after {
+	  content: '';
+    position: absolute;
+    left: 50%;
+    height: 50px;
+    margin: -25px 0 0 -600px;
+    width: 1200px;    
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,1) 50%,rgba(255,255,255,0.6) 70%,rgba(255,255,255,0) 100%);
+    top: 50%;
+    z-index: -1;	
+	}
+}
+
+// Corner Ribbon
+
+// via http://codepen.io/eode9/
+// http://codepen.io/eode9/pen/twkKm?editors=110
+
+@mixin corner-ribbon {
+  width: 200px;
+  background: #CCC;
+  position: absolute;
+  top: 15px;
+  left: -60px;
+  text-align: center;
+  line-height: 35px;
+  letter-spacing: 0.01em;
+  font: {	
+  	size: 0.65em;
+  	weight: 700;
+  }
+  color: #FFF;
+  text-transform: uppercase;
+  transform: rotate(-45deg);
+	/* Custom styles */
+	
+	&.sticky {
+	  position: fixed;
+	}
+	
+	&.shadow {
+	  box-shadow: 0 0 3px rgba(0,0,0,.3);
+	}
+	
+	// Different positions
+	
+	&.top-left {
+	  top: 25px;
+	  left: -50px;
+	  transform: rotate(-45deg);
+	}
+	
+	&.top-right {
+	  top: 25px;
+	  right: -50px;
+	  left: auto;
+	  transform: rotate(45deg);
+	}
+	
+	&.bottom-left {
+	  top: auto;
+	  bottom: 25px;
+	  left: -50px;
+	  transform: rotate(45deg);
+	}
+	
+	&.bottom-right {
+	  top: auto;
+	  right: -50px;
+	  bottom: 25px;
+	  left: auto;
+	  transform: rotate(-45deg);
+	}
+}
+
+
+// Clearfix
+
+@mixin clearfix {
+  &:before,
+  &:after {
+  	content: ""; 
+  	display: block;
+  	clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+// SR Text
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin sr-only-focusable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+// Arrow Pseudo Elements
+
+@mixin pseudo-arrow {
+  position: relative; 
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+@mixin pseudo-arrow-top-right {
+  @include pseudo-arrow;
+  &:after {
+    border-top: 10px solid transparent;
+    border-right: 10px solid currentColor;
+    border-bottom: 10px solid transparent;
+    bottom: -1px;
+    left: 0;
+    left: 50%;
+    margin-left: -10px;  
+  }
+}
+
+@mixin pseudo-arrow-bottom {
+  @include pseudo-arrow;
+  &:after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid currentColor;
+    bottom: -1px;
+    left: 0;
+    left: 50%;
+    margin-left: -10px;  
+  }
+}
+
+@mixin pseudo-arrow-left {
+  @include pseudo-arrow;
+  &:after {
+    border-right: 6px solid currentColor;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid transparent;
+    top: 50%;
+    left: 0;
+  }
+}
+
+@mixin pseudo-arrow-right {
+  @include pseudo-arrow;
+  &:after {
+    border-right: 6px solid currentColor;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid transparent;
+    top: 50%;
+    left: 0;
+  }
+}
+
+@mixin pseudo-bg {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;      
+  height: 100%;
+  width: 100%;
+}
+
+@mixin full-screen {
+  min-height: 100vh;
+  .banner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @media (min-height: 42em) and (min-width: 40em) {
+    //min-height: 100vh;
+  }
+}
+
+.full-screen {
+  @include full-screen;
+}
+
+// MARGINS
+
+// Margin Mixins
+
+@mixin m-auto {
+  margin: auto;
+}
+
+@mixin m-0 {
+  margin: 0;  
+}
+
+@mixin m-0-important {
+  margin: 0 !important; 
+}
+
+@mixin mt-0 {
+  margin-top: 0;
+}
+
+@mixin mt-a {
+  margin-top: auto;
+}
+
+//  Margin Bottom
+
+@mixin mb-a {
+  margin-bottom: auto; 
+}
+
+@mixin mb-0 {
+  margin-bottom: 0; 
+}
+
+@mixin mb-tiny {
+  margin-bottom: .313rem; 
+}
+
+@mixin mb-sm {
+  margin-bottom: .625rem; 
+}
+
+@mixin mb-1 {
+  margin-bottom: 1rem;  
+}
+
+@mixin mb-1-pt5 {
+  margin-bottom: 1.5rem; 
+}
+
+@mixin mb-2 {
+  margin-bottom: 2rem;  
+}
+
+@mixin mb-2-pt5 {
+  margin-bottom: 2.5rem; 
+}
+
+@mixin mb-3 {
+  margin-bottom: 3rem;  
+}
+
+@mixin mb-3-pt5 {
+  margin-bottom: 3.5rem; 
+}
+
+@mixin mb-4 {
+  margin-bottom: 4rem;  
+}
+
+
+// Margin Right & Left
+
+@mixin mr-ml-a {
+  margin-right: auto;
+  margin-left: auto;  
+}
+
+@mixin mr-ml-0 {
+  margin-right: 0;
+  margin-left: 0;  
+}
+
+// Margin Right
+
+@mixin mr-a {
+  margin-right: auto; 
+}
+
+@mixin mr-0 {
+  margin-right: 0;  
+}
+
+@mixin mr-tiny {
+  margin-right: .313rem;
+}
+
+@mixin mr-sm {
+  margin-right: .625rem;
+}
+
+@mixin mr-1 {
+  margin-right: 1rem;  
+}
+
+@mixin mr-2 {
+  margin-right: 2rem;  
+}
+
+@mixin mr-3 {
+  margin-right: 3rem;  
+}
+
+@mixin mr-4 {
+  margin-right: 4rem;  
+}
+
+// Margin Left
+
+@mixin ml-a {
+  margin-left: auto; 
+}
+
+@mixin ml-0 {
+  margin-left: 0; 
+}
+
+@mixin ml-tiny {
+  margin-left: .313rem;  
+}
+
+@mixin ml-sm {
+  margin-left: .625rem; 
+}
+
+@mixin ml-1 {
+  margin-left: 1rem;  
+}
+
+@mixin ml-2 {
+  margin-left: 2rem;  
+}
+
+@mixin ml-3 {
+  margin-left: 3rem;  
+}
+
+@mixin ml-4 {
+  margin-left: 4rem;  
+}
+
+// PADDING
+// Padding Mixins
+
+@mixin p-0 {
+  padding: 0;
+}
+
+@mixin p-0-important {
+  padding: 0 !important; 
+}
+
+@mixin p-tiny {
+  padding: .313em; 
+}
+
+@mixin p-sm {
+  padding: .625em; 
+}
+
+@mixin p-1 {
+  padding: 1em; 
+}
+
+@mixin p-1-pt5 {
+  padding: 1.5em; 
+}
+
+@mixin p-2 {
+  padding: 2em; 
+}
+
+@mixin p-2-pt5 {
+  padding: 2.5em; 
+}
+
+@mixin p-3 {
+  padding: 3em; 
+}
+
+@mixin p-3-pt5 {
+  padding: 3.5em; 
+}
+
+@mixin p-4 {
+  padding: 4em; 
+}
+
+@mixin p-4-pt5 {
+  padding: 4.5em; 
+}
+
+@mixin p-5 {
+  padding: 5em; 
+}
+
+@mixin p-5-pt5 {
+  padding: 5.5em; 
+}
+
+//  Padding Top & Bottom
+
+@mixin pt-pb-0 {
+  padding-top: 0;
+  padding-bottom: 0;   
+}
+
+@mixin pt-pb-tiny {
+  padding-top: .313em;
+  padding-bottom: .313em;   
+}
+
+@mixin pt-pb-sm {
+  padding-top: .625em;
+  padding-bottom: .625em;   
+}
+
+@mixin pt-pb-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;   
+}
+
+@mixin pt-pb-2 {
+  padding-top: 2em;
+  padding-bottom: 2em;   
+}
+
+@mixin pt-pb-3 {
+  padding-top: 3em;
+  padding-bottom: 3em;   
+}
+
+@mixin pt-pb-4 {
+  padding-top: 4em;
+  padding-bottom: 4em;   
+}
+
+@mixin pt-pb-5 {
+  padding-top: 5em;
+  padding-bottom: 5em;   
+}
+
+// Padding Top
+
+@mixin pt-0 {
+  padding-top: 0; 
+}
+
+@mixin pt-tiny {
+  padding-top: .313em; 
+}
+
+@mixin pt-sm {
+  padding-top: .625em;
+}
+
+@mixin pt-1 {
+  padding-top: 1em;  
+}
+
+@mixin pt-2 {
+  padding-top: 2em;  
+}
+
+@mixin pt-3 {
+  padding-top: 3em;  
+}
+
+@mixin pt-4 {
+  padding-top: 4em;  
+}
+
+@mixin pt-5 {
+  padding-top: 5em;  
+}
+
+// Padding Bottom
+
+@mixin pb-0 {
+  padding-bottom: 0;  
+}
+
+@mixin pb-tiny {
+  padding-bottom: .313em;  
+}
+
+@mixin pb-sm {
+  padding-bottom: .625em; 
+}
+
+@mixin pb-1 {
+  padding-bottom: 1em;  
+}
+
+@mixin pb-2 {
+  padding-bottom: 2em;  
+}
+
+@mixin pb-3 {
+  padding-bottom: 3em;  
+}
+
+@mixin pb-4 {
+  padding-bottom: 4em;  
+}
+
+@mixin pb-5 {
+  padding-bottom: 5em;  
+}
+
+
+// Padding Right & Left
+
+@mixin pr-pl-0 {
+  padding-right: 0;
+  padding-left: 0;  
+}
+
+@mixin pr-pl-tiny {
+  padding-right: .313em;
+  padding-left: .313em;   
+}
+
+@mixin pr-pl-sm {
+  padding-right: .625em;
+  padding-left: .625em;   
+}
+
+@mixin pr-pl-1 {
+  padding-right: 1em;
+  padding-left: 1em;   
+}
+
+@mixin pr-pl-2 {
+  padding-right: 2em;
+  padding-left: 2em;   
+}
+
+@mixin pr-pl-3 {
+  padding-right: 3em;
+  padding-left: 3em;   
+}
+
+@mixin pr-pl-4 {
+  padding-right: 4em;
+  padding-left: 4em;   
+}
+
+
+// Padding Right
+
+@mixin pr-0 {
+  padding-right: 0; 
+}
+
+@mixin pr-tiny {
+  padding-right: .313em;   
+}
+
+@mixin pr-sm {
+  padding-right: .625em; 
+}
+
+@mixin pr-1 {
+  padding-right: 1em;  
+}
+
+@mixin pr-2 {
+  padding-right: 2em;  
+}
+
+@mixin pr-3 {
+  padding-right: 3em;  
+}
+
+@mixin pr-4 {
+  padding-right: 4em;  
+}
+
+
+// Padding Left
+
+@mixin pl-0 {
+  padding-left: 0;  
+}
+
+@mixin pl-tiny {
+  padding-left: .313em;   
+}
+
+@mixin pl-sm {
+  padding-left: .625em;   
+}
+
+@mixin pl-1 {
+  padding-left: 1em;  
+}
+
+@mixin pl-2 {
+  padding-left: 2em;  
+}
+
+@mixin pl-3 {
+  padding-left: 3em;  
+}
+
+@mixin pl-4 {
+  padding-left: 4em;  
+}
+
+// Padding Mixins
+
+@mixin p-0 {
+  padding: 0; 
+}
+
+@mixin p-0-important {
+  padding: 0 !important; 
+}
+
+@mixin p-tiny {
+  padding: .313em; 
+}
+
+@mixin p-sm {
+  padding: .625em; 
+}
+
+@mixin p-1 {
+  padding: 1em; 
+}
+
+@mixin p-1-pt5 {
+  padding: 1.5em; 
+}
+
+@mixin p-2 {
+  padding: 2em; 
+}
+
+@mixin p-2-pt5 {
+  padding: 2.5em; 
+}
+
+@mixin p-3 {
+  padding: 3em; 
+}
+
+@mixin p-3-pt5 {
+  padding: 3.5em; 
+}
+
+@mixin p-4 {
+  padding: 4em; 
+}
+
+@mixin p-4-pt5 {
+  padding: 4.5em; 
+}
+
+@mixin p-5 {
+  padding: 5em; 
+}
+
+@mixin p-5-pt5 {
+  padding: 5.5em; 
+}
+
+//  Padding Top & Bottom
+
+@mixin pt-pb-tiny {
+  padding-top: .313em;
+  padding-bottom: .313em;   
+}
+
+@mixin pt-pb-sm {
+  padding-top: .625em;
+  padding-bottom: .625em;   
+}
+
+@mixin pt-pb-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;   
+}
+
+@mixin pt-pb-2 {
+  padding-top: 2em;
+  padding-bottom: 2em;   
+}
+
+@mixin pt-pb-3 {
+  padding-top: 3em;
+  padding-bottom: 3em;   
+}
+
+@mixin pt-pb-4 {
+  padding-top: 4em;
+  padding-bottom: 4em;   
+}
+
+@mixin pt-pb-5 {
+  padding-top: 5em;
+  padding-bottom: 5em;   
+}
+
+// Padding Top
+
+@mixin pt-0 {
+  padding-top: 0; 
+}
+
+@mixin pt-tiny {
+  padding-top: .313em; 
+}
+
+@mixin pt-sm {
+  padding-top: .625em;
+}
+
+@mixin pt-1 {
+  padding-top: 1em;  
+}
+
+@mixin pt-2 {
+  padding-top: 2em;  
+}
+
+@mixin pt-3 {
+  padding-top: 3em;  
+}
+
+@mixin pt-4 {
+  padding-top: 4em;  
+}
+
+@mixin pt-5 {
+  padding-top: 5em;  
+}
+
+// Padding Bottom
+
+@mixin pb-0 {
+  padding-bottom: 0;  
+}
+
+@mixin pb-tiny {
+  padding-bottom: .313em;  
+}
+
+@mixin pb-sm {
+  padding-bottom: .625em; 
+}
+
+@mixin pb-1 {
+  padding-bottom: 1em;  
+}
+
+@mixin pb-2 {
+  padding-bottom: 2em;  
+}
+
+@mixin pb-3 {
+  padding-bottom: 3em;  
+}
+
+@mixin pb-4 {
+  padding-bottom: 4em;  
+}
+
+@mixin pb-5 {
+  padding-bottom: 5em;  
+}
+
+
+// Padding Right & Left
+
+@mixin pr-pl-0 {
+  padding-right: 0;
+  padding-left: 0;  
+}
+
+@mixin pr-pl-tiny {
+  padding-right: .313em;
+  padding-left: .313em;   
+}
+
+@mixin pr-pl-sm {
+  padding-right: .625em;
+  padding-left: .625em;   
+}
+
+@mixin pr-pl-1 {
+  padding-right: 1em;
+  padding-left: 1em;   
+}
+
+@mixin pr-pl-2 {
+  padding-right: 2em;
+  padding-left: 2em;   
+}
+
+@mixin pr-pl-3 {
+  padding-right: 3em;
+  padding-left: 3em;   
+}
+
+@mixin pr-pl-4 {
+  padding-right: 4em;
+  padding-left: 4em;   
+}
+
+
+// Padding Right
+
+@mixin pr-0 {
+  padding-right: 0; 
+}
+
+@mixin pr-tiny {
+  padding-right: .313em;   
+}
+
+@mixin pr-sm {
+  padding-right: .625em; 
+}
+
+@mixin pr-1 {
+  padding-right: 1em;  
+}
+
+@mixin pr-2 {
+  padding-right: 2em;  
+}
+
+@mixin pr-3 {
+  padding-right: 3em;  
+}
+
+@mixin pr-4 {
+  padding-right: 4em;  
+}
+
+
+// Padding Left
+
+@mixin pl-0 {
+  padding-left: 0;  
+}
+
+@mixin pl-tiny {
+  padding-left: .313em;   
+}
+
+@mixin pl-sm {
+  padding-left: .625em;   
+}
+
+@mixin pl-1 {
+  padding-left: 1em;  
+}
+
+@mixin pl-2 {
+  padding-left: 2em;  
+}
+
+@mixin pl-3 {
+  padding-left: 3em;  
+}
+
+@mixin pl-4 {
+  padding-left: 4em;  
+}
+
+// TEXT
+@mixin font-scale {
+  font-size: calc( 1rem + (40 - 28) * ( (100vw - 400px) / ( 2000 - 400)));
+}
+
+//** ALIGNMENT (align-left by default) **//
+
+// align right
+@mixin align-right {
+  // > 540
+  @media (min-width: $break-540) {
+    text-align: right;
+    *+*:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// align center
+@mixin align-center {
+  // > 540
+  @media (min-width: $break-540) {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+//** FONT SIZE (em) **//
+
+@mixin text-tiny {
+  font-size: .7em;
+}
+
+@mixin text-sm {
+  font-size: .875em;
+}
+
+@mixin text-base {
+  font-size: 1em;
+}
+
+@mixin text-md {
+  font-size: 1.35em;
+}
+
+@mixin text-lg {
+  font-size: 1.875em;
+}
+
+@mixin text-xl {
+  font-size: 2.25em;
+}
+
+@mixin text-xxl {
+  font-size: 2.75em;
+}
+
+@mixin display-sm {
+  font-size: calc(1vw + 3.875em);
+}
+
+@mixin display-md {
+  font-size: calc(1vw + 5em);
+}
+
+@mixin display-lg {
+  font-size: calc(1vw + 7.75em);
+}
+
+//** FONT SIZE (rem) **//
+
+@mixin text-tiny-r {
+  font-size: .7rem;
+}
+
+@mixin text-sm-r {
+  font-size: .875rem;
+}
+
+@mixin text-base-r {
+  font-size: 1rem;
+}
+
+@mixin text-md-r {
+  font-size: 1.25rem;
+}
+
+@mixin text-lg-r {
+  font-size: 1.875rem;
+}
+
+@mixin text-xl-r {
+  font-size: 2rem;
+}
+
+@mixin text-xl-r {
+  font-size: 2.75rem;
+}
+
+@mixin display-sm-r {
+  font-size: calc(1vw + 3.875rem);
+}
+
+@mixin display-md-r {
+  font-size: calc(1vw + 5rem);
+}
+
+@mixin display-lg-r {
+  font-size: calc(1vw + 7.75em);
+}
+
+//** FONT STYLES **//
+@mixin all-caps {
+  text-transform: uppercase;
+}
+
+@mixin italic {
+  font-style: italic;
+}
+
+@mixin bold {
+  font-weight: 700;
+}
+
+@mixin text-u {
+  text-decoration: underline;
+}
+
+@mixin text-u-none {
+  text-decoration: none;
+}
+
+@mixin text-link {
+  background: none;
+  @include block;
+  @include pb-tiny;
+  @include text-md; 
+  @include text-u-none;
+  line-height: 1.2;
+  text-shadow: none;
+}
+
+//** LIST STYLES **//
+
+@mixin list-unstyled {
+  font-family: $sans-serif;
+  ul {
+    font-family: $sans-serif;
+    @include mb-0;
+    @include pt-pb-1;
+    li:last-child {
+      @include mb-0;
+    }
+  }
+}
+
+@mixin list-clean {
+  li {
+    list-style-type: none;
+  }
+}
+
+@mixin list-nested {
+  @include pt-pb-1;
+  @include pl-3;
+  @include w-100;
+  > li {
+    list-style-type: circle;
+  }
+}
+
+@mixin arrow-list-lg {
+  @include p-0;
+  > li {
+    @include flex;
+    //@include flex-wrap;
+    @include list-clean;
+    &:before {
+      color: $orange;
+      content: "→ ";
+      @include pr-sm;
+    }
+  }
+}
+
+@mixin list-parent {
+  @include flex-wrap;
+}
+
+// LAYOUT
+// Display Options
+@mixin block {
+  display: block;
+}
+
+@mixin inline {
+  display: inline;
+}
+
+@mixin inline-block {
+  display: inline-block;
+}
+
+@mixin table {
+  display: table;
+}
+
+@mixin table-cell {
+  display: table-cell
+}
+
+@mixin vis-hidden {
+  visibility: hidden;
+}
+
+@mixin visible {
+  visibility: visible;
+}
+
+@mixin hidden {
+  display: none !important;
+}
+
+@mixin overflow-hidden {
+  overflow: hidden;
+}
+
+// Postion
+@mixin fixed {
+  position: fixed;
+}
+
+@mixin absolute {
+  position: absolute;
+}
+
+@mixin relative {
+  position: relative;
+}
+
+@mixin static {
+  position: static;
+}
+
+// Floats
+@mixin float-l {
+  float: left;
+}
+
+@mixin float-r {
+  float: right;
+}
+
+@mixin float-none {
+  float: none;
+}
+
+// height
+@mixin h-auto {
+  height: auto;
+}
+
+@mixin h-0 {
+  height: 0;
+}
+
+@mixin h-25 {
+  height: 25%;
+}
+
+@mixin h-50 {
+  height: 50%;
+}
+
+@mixin h-75 {
+  height: 75%;
+}
+
+@mixin h-100 {
+  height: 100%;
+}
+
+@mixin h-50vh {
+  height: 50vh;
+}
+
+@mixin h-100vh {
+  height: 100vh;
+}
+
+@mixin mh-100vh {
+  min-height: 100vh;
+}
+
+// Width Sizes
+@mixin w-a {
+  width: auto;
+}
+
+@mixin w-5 {
+  width: 5%;
+}
+
+@mixin w-10 {
+  width: 10%;
+}
+
+@mixin w-15 {
+  width: 15%;
+}
+
+@mixin w-20 {
+  width: 20%;
+}
+
+@mixin w-25 {
+  width: 25%;
+}
+
+@mixin w-30 {
+  width: 30%;
+}
+
+@mixin w-33 {
+  width: 33%;
+}
+
+@mixin w-35 {
+  width: 35%;
+}
+
+@mixin w-40 {
+  width: 40%;
+}
+
+@mixin w-45 {
+  width: 45%;
+}
+
+@mixin w-50 {
+  width: 50%;
+}
+
+@mixin w-55 {
+  width: 55%;
+}
+
+@mixin w-60 {
+  width: 60%;
+}
+
+@mixin w-65 {
+  width: 65%;
+}
+
+@mixin w-70 {
+  width: 70%;
+}
+
+@mixin w-75 {
+  width: 75%;
+}
+
+@mixin w-80 {
+  width: 80%;
+}
+
+@mixin w-85 {
+  width: 85%;
+}
+
+@mixin w-90 {
+  width: 90%;
+}
+
+@mixin w-95 {
+  width: 95%;
+}
+
+@mixin w-100 {
+  width: 100%;
+}
+
+@mixin w-auto {
+  width: auto;
+}
+
+// Max-Width Sizes
+@mixin mw-2em {
+  max-width: 2em;
+}
+
+@mixin mw-3em {
+  max-width: 3em;
+}
+
+@mixin mw-4em {
+  max-width: 4em;
+}
+
+@mixin mw-5em {
+  max-width: 5em;
+}
+
+@mixin mw-6em {
+  max-width: 6em;
+}
+
+@mixin mw-7em {
+  max-width: 7em;
+}
+
+@mixin mw-8em {
+  max-width: 8em;
+}
+
+@mixin mw-9em {
+  max-width: 9em;
+}
+
+@mixin mw-10em {
+  max-width: 10em;
+}
+
+@mixin mw-15em {
+  max-width: 15em;
+}
+
+@mixin mw-20em {
+  max-width: 20em;
+}
+
+@mixin mw-25em {
+  max-width: 25em;
+}
+
+@mixin mw-30em {
+  max-width: 30em;
+}
+
+@mixin mw-35em {
+  max-width: 35em;
+}
+
+@mixin mw-40em {
+  max-width: 40em;
+}
+
+@mixin mw-42em {
+  max-width: 42em;
+}
+
+@mixin mw-44em {
+  max-width: 44em;
+}
+
+@mixin mw-48em {
+  max-width: 48em;
+}
+
+@mixin mw-56em {
+  max-width: 56.25em;
+}
+
+@mixin mw-62em {
+  max-width: 62em;
+}
+
+@mixin mw-100p {
+  max-width: 100%;
+}
+
+// placement
+
+@mixin rotate-90 {
+  transform: rotate(90deg);
+}
+
+@mixin rotate-neg-90 {
+  transform: rotate(-90deg);
+}
+
+@mixin rotate-45 {
+  transform: rotate(45deg);
+}
+
+@mixin rotate-neg-45 {
+  transform: rotate(-45deg);
+}
+
+@mixin rotate-180 {
+  transform: rotate(180deg);
+}
+
+// BACKGROUNDS
+// background styles
+
+@mixin bg-trans {
+  background: transparent;
+}
+
+@mixin bg-pos-center {
+  background-position: center;
+}
+
+@mixin bg-repeat-no {
+  background-repeat: no-repeat;
+}
+
+@mixin bg-size-cover {
+  background-size: cover;
+}
+
+@mixin bg-cover {
+  @include bg-pos-center;
+  @include bg-repeat-no;
+  @include bg-size-cover;
+}
+
+@mixin bg-full {
+  @include bg-cover;
+  @include flex;
+  @include ai-center;
+  @include as-stretch;
+  @include flex-grow-1;
+  @include pt-pb-5;
+  // > 800px
+  @media (min-width: 50em) {
+   //@include h-50vh;
+  }
+
+}
+
+@mixin bg-hero {
+  
+  @include bg-cover;
+  @include bg-full;
+  @include font-scale;
+  @include h-100vh;
+
+  .container {
+    padding-right: calc(1vw + 2em);
+    padding-left: calc(1vw + 2em);
+    @include mw-48em;
+  }
+
+  .h1, h1 {
+    font-size: 2.25em;
+    //font-size: 4vmax;
+    @include mb-sm;
+  }
+
+  p {
+    @include mw-40em;
+    @include mr-ml-a;
+    @include mb-2;
+    @include text-sm;
+  }
+
+  .btn {
+    @include text-sm;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+  }
+
+  @media (max-height: $break-640) {
+    @include h-auto;
+    padding-top: 7.5em;
+    @include pb-5;
+  }
+
+  // > 800px
+  @media (min-width: 50em) and (min-height: 30em) {
+    @include h-100vh;
+  }
+
+}
+
+@mixin slug-img-bg {
+  background: url("../images/UI/ui-icons/icon-photo.svg") center no-repeat #DDD;
+  background-size: 20%;
+}
+
+@mixin slug-video-bg {
+  background: url("../images/UI/ui-icons/icon-video.svg") center no-repeat #DDD;
+  background-size: 20%;
+}
+
+@mixin slug-code-bg {
+  background: url("../images/UI/ui-icons/icon-codepen-grey.svg") center no-repeat #DDD;
+  background-size: 20%;
+}
+
+// FLEX
+//**  Flex Modifiers  **//
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+
+@mixin flex-auto {
+  flex: 0 1 auto;
+  min-width: 0; 
+  min-height: 0;
+}
+
+@mixin flex-reset {
+  flex-shrink: 0;
+  min-width: 0; 
+  min-height: 0;
+}
+
+@mixin flex-basis-auto {
+  flex-basis: auto;
+}
+
+@mixin flex-1 {
+  flex: 1 1 auto;
+  min-width: 0; 
+  min-height: 0;
+}
+
+@mixin flex-grow-0 {
+  flex-grow: 0;
+}
+
+@mixin flex-grow-1 {
+  flex-grow: 1;
+}
+
+@mixin flex-grow-2 {
+  flex-grow: 2;
+}
+
+@mixin flex-grow-3 {
+  flex-grow: 3;
+}
+
+@mixin flex-grow-4 {
+  flex-grow: 4;
+}
+
+@mixin flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+// Flex Direction
+
+@mixin flex-d-col {
+  flex-direction: column;
+}
+
+@mixin flex-d-col-rev {
+  flex-direction: column-reverse;
+}
+
+@mixin flex-d-row {
+  flex-direction: row;
+}
+
+@mixin flex-d-row-rev {
+  flex-direction: row-reverse
+}
+
+// Align Items
+
+@mixin ai-start {
+  align-items: flex-start;
+}
+
+@mixin ai-end {
+  align-items: flex-end;
+}
+
+@mixin ai-center {
+  align-items: center;
+}
+
+@mixin ai-stretch {
+  align-items: stretch;
+}
+
+// Align Self
+
+@mixin as-start {
+  align-self: flex-start;
+}
+
+@mixin as-end {
+  align-self: flex-end;
+}
+
+@mixin as-center {
+  align-self: center;
+}
+
+@mixin as-stretch {
+  align-self: stretch;
+}
+
+@mixin as-space-around {
+  align-self: space-around;
+}
+
+@mixin as-space-between {
+  align-self: space-between;
+}
+
+// Flex Justify Content
+
+@mixin jc-start {
+  justify-content: flex-start;
+}
+
+@mixin jc-end {
+  justify-content: flex-end;
+}
+
+@mixin jc-center {
+  justify-content: center;
+}
+
+@mixin jc-stretch {
+  justify-content: stretch;
+}
+
+@mixin jc-around {
+  justify-content: space-around;
+}
+
+@mixin jc-between {
+  justify-content: space-between;
+}
+
+// Flex Order
+
+@mixin flex-lead {
+  flex: 1 0 100%;
+  width: 100%;  
+}
+
+@mixin flex-sm {
+  // > 640
+  @media (min-width: $break-640) {
+    flex-grow: 0;
+    width: auto;
+  }
+}
+
+// Flex Layout
+@mixin flex-layout {
+  > * {
+    flex-basis: 100%;
+    padding-bottom: 1.5em;
+    width: auto;
+  }
+  .media-item {
+    margin-bottom: 0;
+  }
+  // > 640
+  @media (min-width: $break-640) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    > * {
+      float: left; 
+      //flex: 1 1 auto;
+      flex-basis: 50%;
+      flex-grow: 1;
+      padding-top: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      padding-left: 1em;
+      min-height: 0;
+      min-width: 0;
+      &.flex-sm {
+        flex-basis: auto;
+      }
+    }
+  }
+  // > 667
+  @media (min-width: $break-640) {
+    .flex-lead {
+      flex-basis: 100%;
+    }
+  }
+}
+
+// Media Layout
+@mixin l-media-grid {
+  margin-right: -1em;
+  margin-left: -1em;
+  > * {
+    padding: 1em;
+  }
+  // < 320
+  @media (max-width: 300px) {
+    figcaption {
+      @include sr-only;
+    }
+  }
+  // < 640
+  @media (max-width: $break-640) {
+    > * {
+      flex-basis: 100%;
+    }
+  }
+  // > 800
+  @media (min-width: 50em) {
+    &.col-2 > * {
+      flex-basis: 50%;
+    }
+  }
+  // > 1200
+  @media (min-width: $break-1200) {
+    > * {
+      flex-basis: 33%;
+    }
+  }
+}
+
+@mixin flex-layout-grid {
+  @include flex-layout;
+  > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}
+
+@mixin flex-3-col {
+  @media (min-width: $break-900) {
+    @include flex-layout-grid;
+    > * {
+      flex-basis: 11em;
+    }
+  }
+}
+
+// CSS GRID
+// CSS Grid Layout
+
+@mixin grid {
+  @include flex;
+  @include flex-wrap;
+  //@include pb-2;
+  //@include mw-100p;
+  > * {
+    @include flex-grow-1;
+    @include p-1;
+    flex-basis: 15em;
+  }
+  @supports (grid-gap: 0) {
+    display: grid;
+    grid-gap: 2em;
+    > * {
+      @include p-0;
+    }
+    @media (min-width: $break-640) {
+      grid-template-columns: repeat(auto-fit, minmax(10.5em, 1fr));  
+    }
+  }
+
+}
+
+@mixin grid-2-col {
+  @include grid;
+  @supports (grid-gap: 0) {
+    @media (min-width: $break-640) {
+      grid-gap: 2em 3em;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@mixin grid-lg {
+  @include grid-2-col;
+  @media (min-width: $break-640) {
+    grid-gap: 5em 0;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: $break-768) {
+    grid-gap: 0 5em;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@mixin grid-4-col {
+  @include grid;
+  @supports (grid-gap: 0) {
+    grid-template-columns: repeat(auto-fit, minmax(16.5em, 1fr));
+    grid-gap: 2em;
+    // 2 cols @ 900 ~ 1360
+    @media (min-width: 60em) and (max-width: 85em) {
+      grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    }
+  }
+}
+
+@mixin grid-banner {
+  @media (max-width: $break-900) {
+    > .container {
+      @include p-2;
+    }
+  }
+  @media (min-width: $break-900) {
+    .grid-wrap {
+      @include grid;
+      grid-template-rows: minmax(50vh, 1fr);
+      > * {
+        display: flex;
+      }
+    }
+  }
+}
+
+@mixin grid-gap-0 {
+  @supports (grid-gap: 0) {
+    grid-gap: 0 !important;
+  }
+}
+
+// MEDIA
+
+@mixin media-wrap {
+  @include fade-in;
+  line-height: 0;
+  height: 0; // padding-bottom: 70% !important; // 4:3
+  margin: 0;
+  position: relative;
+  padding-bottom: 56.25%; // 16:9
+  width: 100%;
+  z-index: 1;
+  img,
+  iframe {
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: .4s ease;
+  }
+}
+
+// Images
+
+@mixin circle-mask {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; 
+  max-height: 20rem;
+  max-width: 20rem;
+  figcaption {
+    display: none;
+  }
+  &.mask-outside {
+    shape-outside: circle();
+  }
+  @media (min-width: $break-900) {
+    max-height: 25rem;
+    max-width: 25rem;
+  }
+}
+
+@mixin circle-mask-md {
+  @include circle-mask;
+  max-height: 20rem;
+  max-width: 20rem;
+}
+
+@mixin circle-mask-sm {
+  @include circle-mask;
+  max-height: 10rem;
+  max-width: 10rem;
+}
+
+@mixin rounded-mask {
+  border-radius: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  img {
+    border-radius: 1rem;
+  }
+}
+
+//** LIST STYLES **//
+
+@mixin list-unstyled {
+  font-family: $sans-serif;
+  ul {
+    font-family: $sans-serif;
+    @include mb-0;
+    @include pt-pb-1;
+    li:last-child {
+      @include mb-0;
+    }
+  }
+}
+
+@mixin list-clean {
+  li {
+    list-style-type: none;
+  }
+}
+
+@mixin list-nested {
+  @include pt-pb-1;
+  @include pl-3;
+  @include w-100;
+  > li {
+    list-style-type: circle;
+  }
+}
+
+@mixin arrow-list-lg {
+  @include p-0;
+  > li {
+    @include flex;
+    @include list-clean;
+    &:before {
+      content: "→ ";
+      @include pr-sm;
+    }
+  }
+}
+
+@mixin list-parent {
+  @include flex-wrap;
+}
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+.list-clean {
+  @include list-clean;
+}
+
+.list-nested {
+  @include list-nested;
+}
+
+.arrow-list-lg {
+  @include arrow-list-lg;
+}
+
+.list-parent {
+  @include list-parent;
+}
+
+.grid {
+  @include grid;
+}
+
+.grid-2-col {
+  @include grid-2-col;
+}
+
+.grid-4-col {
+  @include grid-4-col;
+}
+
+.grid-lg {
+  @include grid-lg;
+}
+
+.grid-banner {
+  @include grid-banner;
+}
+
+.grid-flush {
+  @include grid-gap-0;
+}
+
+.circle-mask {
+  @include circle-mask;
+  @media (min-width: $break-640) {
+    
+  }
+}
+
+.circle-mask-md {
+  @media (min-width: $break-640) {
+    @include circle-mask-md;
+  }
+}
+
+.circle-mask-sm {
+  @media (min-width: $break-640) {
+    @include circle-mask-sm;
+  }
+}
+
+.rounded-mask {
+  @include rounded-mask;
+}
