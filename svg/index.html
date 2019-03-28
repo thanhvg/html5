@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<svg height="80" width="300">
+  <g fill="none">
+    <path stroke="red" d="M5 20 l215 0" />
+    <path stroke="black" d="M5 40 l215 0" />
+    <path stroke="blue" d="M5 60 l215 0" />
+  </g>
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+
+ <svg width="1001" height="1001" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+      <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="gray" stroke-width="0.5"/>
+      </pattern>
+      <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+        <rect width="100" height="100" fill="url(#smallGrid)"/>
+        <path d="M 100 0 L 0 0 0 100" fill="none" stroke="gray" stroke-width="1"/>
+      </pattern>
+      
+      <g id="cross">
+        <path stroke="blue" d="M0 0 l100 100" id="cross" stroke-width="3" />
+        <path stroke="blue" d="M0 100 l100 -100" id="cross" stroke-width="3" />
+      </g>
+
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+    
+    <use x="0" y="0" href="#cross"/>      
+
+    <use x="200" y="200" href="#cross"/>      
+    <use x="300" y="200" href="#cross"/>      
+  </svg>
+
+ 
+  <svg width="1001" height="1001" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+        <path d="M 100 0 L 0 0 0 100" fill="none" stroke="gray" stroke-width="1"/>
+      </pattern>
+      
+      <g id="cross">
+        <path stroke="blue" d="M0 0 l100 100" id="cross" stroke-width="3" />
+        <path stroke="blue" d="M0 100 l100 -100" id="cross" stroke-width="3" />
+      </g>
+
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+    
+    <use x="0" y="0" href="#cross"/>      
+
+    <use x="200" y="200" href="#cross"/>      
+    <use x="300" y="200" href="#cross"/>      
+  </svg>
+</body>
+</html>
