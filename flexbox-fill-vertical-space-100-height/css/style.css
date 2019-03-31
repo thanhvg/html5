@@ -16,12 +16,12 @@ body {
   font-size: 36px;
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
 }
 .container .box-1 {
   background-color: green;
-  height: 60px;
+  /* height: 60px; */
 }
 .container .box-2 {
   background-color: blue;
@@ -30,5 +30,5 @@ body {
 }
 .container .box-3 {
   background-color: red;
-  height: 60px;
+  /* height: 60px; */
 }

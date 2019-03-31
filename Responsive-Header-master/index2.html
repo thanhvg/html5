@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tailwind Starter Template - Responsive Header : Tailwind Toolbox</title>
+	<meta name="author" content="name">
+  <meta name="description" content="description here">
+	<meta name="keywords" content="keywords,here">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+   
+</head>
+
+<body class="bg-grey-light font-sans leading-normal tracking-normal md:h-full md:min-h-full flex flex-col">
+	<nav class="flex items-center justify-between flex-wrap bg-grey-darkest p-1  w-full z-10 pin-t">
+		<div class="flex items-center flex-no-shrink text-white mr-6">
+			<a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+				<span class="text-2xl pl-2"> Brand </span>
+			</a>
+		</div>
+
+		<div class="block lg:hidden">
+			<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-grey border-grey-dark hover:text-white hover:border-white">
+				<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+			</button>
+		</div>
+
+		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden pt-1 lg:pt-0" id="nav-content">
+			<ul class="list-reset lg:flex justify-end flex-1 items-center">
+				<li class="mr-3">
+					<a class="inline-block py-2 px-4 text-white no-underline" href="#">Active</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-grey-dark no-underline hover:text-grey-lighter hover:text-underline py-2 px-4" href="#">link</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-grey-dark no-underline hover:text-grey-lighter hover:text-underline py-2 px-4" href="#">link</a>
+				</li>
+				<li class="mr-3">
+					<a class="inline-block text-grey-dark no-underline hover:text-grey-lighter hover:text-underline py-2 px-4" href="#">link</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!--Container-->
+	<div class="container mx-auto flex flex-col md:flex-row items-center flex-1">
+    <!--Left Col-->
+		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6">
+			<p class="uppercase tracking-loose">IVT</p>
+			<h1 class="my-4">Video</h1>
+			<p class="leading-normal mb-4">Live feeds</p>
+			<button class="bg-transparent hover:bg-black text-black hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">Super Button</button>
+		</div>
+
+		<!--Right Col-->
+		<div class="w-full lg:w-1/2 lg:py-6 ">
+			<!--Add your product image here-->
+      <div>
+        list here
+      </div>
+      <div>
+       Lorem ipsum dolor sit amet,
+       consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec
+       pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget,
+       convallis nec, purus. Cum sociis natoque penatibus et magnis dis
+       parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+       dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla.
+       Nullam rutrum. Nam vestibulum accumsan nisl.
+
+ 
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec
+        pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget,
+        convallis nec, purus. Cum sociis natoque penatibus et magnis dis
+        parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae
+        dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla.
+        Nullam rutrum. Nam vestibulum accumsan nisl.
+ 
+      </div>
+		</div>
+		
+  </div>
+  <div>
+    footer
+  </div>
+
+	<script>
+		//Javascript to toggle the menu
+		document.getElementById('nav-toggle').onclick = function(){
+			document.getElementById("nav-content").classList.toggle("hidden");
+		}
+	</script>
+
+</body>
+</html>
