@@ -47,13 +47,18 @@
 		</div>
 	</nav>
 
-	<!--Container-->
+	<!--No Container, but content-->
 	<div class="flex flex-col md:flex-row flex-1 overflow-hidden">
+
     <!--Left Col-->
-		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 h-full overflow-y-auto">
-			<p class="uppercase tracking-loose">IVT</p>
-			<h1 class="my-4">Video</h1>
-			<p class="leading-normal mb-4">Live feeds</p>
+		<!-- <div class="w-full lg:w-1/2 h-full overflow-y-auto"> -->
+
+    <!-- justify-center will not work -->
+    <!-- https://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container -->
+    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start overflow-y-auto h-full"> 
+			<p>IVT</p>
+			<h1>Video</h1>
+			<p>Live feeds</p>
 			<button class="bg-transparent hover:bg-black text-black hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">Super Button</button>
 
       <div>
